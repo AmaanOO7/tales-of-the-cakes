@@ -1,100 +1,101 @@
-'use client'
-import Navbar from '../components/Navbar'
-
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-bakery-cream to-white font-poppins text-gray-800">
-      <Navbar />
-      <section className="pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-dancing mb-4">Every Cake<br/>Tells a Story</h1>
-            <p className="text-lg text-gray-600 mb-6">Handcrafted cakes, biscuits and pastries — baked with love. Custom orders available for birthdays, weddings and celebrations.</p>
-            <div className="flex gap-4">
-              <a href="#products" className="px-5 py-3 bg-bakery-pink rounded-md text-white font-medium shadow">Explore Products</a>
-              <a href="#order" className="px-5 py-3 border rounded-md text-gray-700">Custom Orders</a>
-            </div>
+    <div className="bg-amber-50 text-amber-900 min-h-screen">
+      {/* Header */}
+      <header className="bg-amber-100 shadow-md fixed w-full z-10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-wide">Tales of the Cake</h1>
+          <nav className="hidden md:flex space-x-6 font-medium">
+            <a href="#home" className="hover:text-amber-600">Home</a>
+            <a href="#menu" className="hover:text-amber-600">Menu</a>
+            <a href="#about" className="hover:text-amber-600">About</a>
+            <a href="#contact" className="hover:text-amber-600">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="pt-32 pb-20 text-center bg-gradient-to-b from-amber-100 to-amber-50">
+        <div className="flex flex-col items-center">
+          {/* Cake Illustration */}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="h-20 w-20 mb-4">
+            <rect x="20" y="70" width="80" height="30" rx="6" fill="#F59E0B" stroke="#78350F" strokeWidth="2"/>
+            <rect x="30" y="50" width="60" height="25" rx="5" fill="#FDE68A" stroke="#78350F" strokeWidth="2"/>
+            <rect x="40" y="35" width="40" height="20" rx="4" fill="#FCD34D" stroke="#78350F" strokeWidth="2"/>
+            <rect x="58" y="15" width="4" height="20" fill="#9CA3AF"/>
+            <ellipse cx="60" cy="12" rx="6" ry="8" fill="#FBBF24" stroke="#B45309" strokeWidth="1"/>
+          </svg>
+
+          {/* Brand Name + Tagline */}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150" className="w-full max-w-2xl">
+            <text
+              x="50%"
+              y="60"
+              textAnchor="middle"
+              fontFamily="cursive"
+              fontSize="48"
+              fill="#B45309"
+              fontWeight="bold"
+            >
+              Tales of the Cake
+            </text>
+            <text
+              x="50%"
+              y="110"
+              textAnchor="middle"
+              fontFamily="serif"
+              fontSize="22"
+              fill="#78350F"
+              fontStyle="italic"
+            >
+              Freshly Baked Happiness
+            </text>
+          </svg>
+        </div>
+      </section>
+
+      {/* Menu Section */}
+      <section id="menu" className="py-20 max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Menu</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+            <h3 className="font-bold text-xl mb-2">Chocolate Cake</h3>
+            <p className="text-amber-700">Rich, moist, and irresistible.</p>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-2xl">
-            <img src="/images/hero-1.svg" alt="cakes" className="w-full h-80 object-cover"/>
+          <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+            <h3 className="font-bold text-xl mb-2">Vanilla Delight</h3>
+            <p className="text-amber-700">Classic vanilla with a modern twist.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-xl p-6 text-center">
+            <h3 className="font-bold text-xl mb-2">Red Velvet</h3>
+            <p className="text-amber-700">Soft, creamy, and simply elegant.</p>
           </div>
         </div>
       </section>
 
-      <section id="products" className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-2xl font-semibold mb-6">Popular Picks</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ProductCard title="Vanilla Story Cake" price="₹1,200" img="/images/prod-1.svg" desc="Light sponge, vanilla buttercream"/>
-          <ProductCard title="Chocolate Chronicle" price="₹1,500" img="/images/prod-2.svg" desc="Rich chocolate ganache"/>
-          <ProductCard title="Almond Biscotti" price="₹250" img="/images/prod-3.svg" desc="Crunchy, nutty"/>
-          <ProductCard title="Lemon Zest Cookies" price="₹200" img="/images/prod-4.svg" desc="Zingy lemon"/>
+      {/* About Section */}
+      <section id="about" className="py-20 bg-amber-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6">About Us</h2>
+          <p className="text-lg text-amber-800">
+            At <b>Tales of the Cake</b>, every cake tells a story. We blend passion, quality,
+            and love into every recipe, ensuring your celebrations are filled
+            with sweetness and joy.
+          </p>
         </div>
       </section>
 
-      <section id="gallery" className="bg-white py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-semibold mb-6">Gallery</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src="/images/gallery-1.svg" className="w-full h-40 object-cover rounded-lg shadow" alt="g1"/>
-            <img src="/images/gallery-2.svg" className="w-full h-40 object-cover rounded-lg shadow" alt="g2"/>
-            <img src="/images/gallery-3.svg" className="w-full h-40 object-cover rounded-lg shadow" alt="g3"/>
-            <img src="/images/gallery-4.svg" className="w-full h-40 object-cover rounded-lg shadow" alt="g4"/>
-          </div>
-        </div>
+      {/* Contact Section */}
+      <section id="contact" className="py-20 max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+        <p className="mb-4">📧 Email: <a href="mailto:talesofthecake@gmail.com" className="text-amber-700 hover:underline">talesofthecake@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:+919931052652" className="text-amber-700 hover:underline">+91 9931052652</a></p>
       </section>
 
-      <section id="story" className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Our Story</h2>
-            <p className="text-gray-600">Started in a small kitchen with a big dream, Tales of the Cake crafts personal and memorable treats. Every recipe is tested, every design is planned with care.</p>
-          </div>
-          <div className="rounded-lg overflow-hidden shadow">
-            <img src="/images/story-1.svg" className="w-full h-56 object-cover" alt="story"/>
-          </div>
-        </div>
-      </section>
-
-      <section id="order" className="max-w-7xl mx-auto px-6 py-12">
-        <h2 className="text-2xl font-semibold mb-4">Custom Orders</h2>
-        <p className="text-gray-600 mb-4">Message us on WhatsApp or email to place custom orders.</p>
-        <div className="flex gap-4">
-          <a href="https://wa.me/91YOURNUMBER" className="px-4 py-2 bg-green-500 text-white rounded">WhatsApp</a>
-          <a href="mailto:yourbakery@example.com" className="px-4 py-2 border rounded">Email</a>
-        </div>
-      </section>
-
-      <footer className="border-t mt-12">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between">
-          <div>
-            <h3 className="font-semibold">Tales of the Cake</h3>
-            <p className="text-sm text-gray-600">Made with ❤️. Pickup & delivery available.</p>
-          </div>
-          <div className="text-sm text-gray-600">Contact: <a href="tel:+91YOURNUMBER" className="text-bakery-pink">+91 YOURNUMBER</a></div>
-        </div>
+      {/* Footer */}
+      <footer className="bg-amber-900 text-amber-100 py-6 text-center">
+        <p>© {new Date().getFullYear()} Tales of the Cake. All rights reserved.</p>
       </footer>
-    </main>
-  )
-}
-
-function ProductCard({ title, price, img, desc }) {
-  return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition">
-      <div className="h-40 overflow-hidden">
-        <img src={img} alt={title} className="w-full h-full object-cover"/>
-      </div>
-      <div className="p-4">
-        <div className="flex items-start justify-between">
-          <div>
-            <h5 className="font-semibold">{title}</h5>
-            <p className="text-xs text-gray-500 mt-1">{desc}</p>
-          </div>
-          <div className="text-right">
-            <div className="font-semibold">{price}</div>
-            <a href={"https://wa.me/91YOURNUMBER?text=I%20want%20to%20order%20"+encodeURIComponent(title)} className="block mt-2 text-xs text-bakery-pink">Quick order</a>
-          </div>
-        </div>
-      </div>
     </div>
-  )
+  );
 }
